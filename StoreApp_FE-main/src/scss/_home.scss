@@ -1,0 +1,388 @@
+// -------------------------------- MENU --------------------------------
+.slick-arrow.prev {
+  left: 100%;
+  background-color: #b3b3b3;
+  border-radius: 90%;
+  padding-top: 1px;
+  transition: all 0.25s linear;
+}
+
+.slick-arrow.prev_banner {
+  left: 20px;
+  background-color: #b3b18a30;
+  width: 30px;
+  height: 30px;
+  border-radius: 90%;
+  font-size: 20px;
+  padding-top: 6px;
+  padding-left: 5px;
+  transition: all 0.25s linear;
+  z-index: 12;
+  top: 45%;
+}
+.slick-arrow.next_coupon {
+  display: none;
+}
+.slick-arrow.prev_coupon {
+  display: none;
+}
+.slick-arrow.next_banner {
+  right: 20px;
+  background-color: #b3b18a30;
+  width: 30px;
+  height: 30px;
+  border-radius: 90%;
+  font-size: 20px;
+  padding-top: 6px;
+  padding-left: 5px;
+  transition: all 0.25s linear;
+  z-index: 12;
+  top: 45%;
+}
+.slick-arrow.next {
+  transition: all 0.25s linear;
+  right: -8%;
+  background-color: #b3b3b3;
+  border-radius: 90%;
+  padding-top: 1px;
+}
+
+.slick-arrow.next:hover {
+  background-color: black;
+}
+.slick-arrow.prev:hover {
+  background-color: black;
+}
+.slick-arrow.next_banner:hover {
+  background-color: black;
+}
+.slick-arrow.prev_banner:hover {
+  background-color: black;
+}
+.user {
+  height: auto;
+}
+.user::before {
+  content: " ";
+  position: absolute;
+  top: -6%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid #333;
+}
+.user::after {
+  content: " ";
+  position: absolute;
+  z-index: 10;
+  top: -6%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 20px;
+  background-color: transparent;
+}
+.icon-user:hover {
+  .user {
+    visibility: inherit;
+    opacity: 1;
+    z-index: 10;
+  }
+}
+.number {
+  position: absolute;
+  right: -10%;
+  top: -5%;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #da3f3f;
+}
+.menu-1023 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  z-index: 15;
+  background-color: #ffffff;
+  transform: translateX(-500px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s linear;
+  li {
+    list-style: none;
+  }
+  li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.menu-1023.active {
+  transform: translateX(0);
+  transition: all 0.5s linear;
+}
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+
+  z-index: 10;
+}
+.menu-overlay.active {
+  display: block;
+}
+.menu-overlay.active {
+  display: block;
+}
+.link {
+  position: relative;
+  transition: clip-path 275ms ease;
+  &:hover span::before,
+  &:focus span::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  span {
+    position: relative;
+    display: inline-block;
+    color: black;
+    &::before {
+      position: absolute;
+      content: attr(data-content);
+      color: #f9a312;
+      text-decoration: underline;
+      text-decoration-color: #f9a312;
+      clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+      transition: clip-path 275ms ease;
+    }
+  }
+}
+
+// -------------------------------- CARD --------------------------------
+
+.card:hover {
+  transform: scale(1.1);
+  transition-delay: 0s;
+}
+.card {
+  transition: transform 0.5s;
+}
+// -------------------------------- COUPON --------------------------------
+
+.coupon-item {
+  box-shadow: inset rgba(0, 0, 0, 0.507) 0px 0px 4px 0px;
+}
+.coupon-item {
+  margin-left: 20px;
+}
+
+// -------------------------------- FLASH SALE --------------------------------
+.flashSale-title {
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+  color: black;
+  overflow: hidden;
+  background: linear-gradient(to right, black 50%, #666666 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 400ms ease;
+  text-decoration: none; // text decorations are clipped in WebKit browsers
+  &:hover {
+    background-position: 0 100%;
+  }
+}
+.dataTab {
+  width: 0px;
+  transition: all 0.3s linear;
+
+  visibility: hidden;
+}
+.dataTab::after {
+  padding-bottom: 15px;
+  content: "";
+  color: white;
+  width: 100%;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  border-bottom: 1.4px solid #000;
+}
+.dataTab.active {
+  visibility: inherit;
+  // border: 1.4px solid red;
+  width: 100%;
+}
+.product-image:hover img:first-child {
+  opacity: 0;
+  // visibility: hidden;
+}
+.product-image img:first-child {
+  // visibility: inherit;
+  transition-delay: 200ms;
+}
+.product-image:hover {
+  .product-view {
+    // visibility: inherit;
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  .image-hover {
+    // transition-delay: 200ms;
+    opacity: 1;
+    transform: scale(0.95);
+    padding: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+}
+.product-view {
+  transition: all 0.2s linear;
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  z-index: 5;
+  transform: translateY(30px);
+  opacity: 0;
+}
+.product-view_hover:hover {
+  color: red;
+  .tooltip {
+    visibility: inherit;
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: -50%;
+  padding: 5px 8px;
+  width: auto;
+  background-color: #333333;
+  border-radius: 5px;
+  min-width: max-content;
+  color: white;
+  font-size: 12px;
+  transform: translateY(5px);
+  visibility: hidden;
+  transition: all 0.2s linear;
+}
+.tooltip1 {
+  left: -12px;
+}
+.tooltip::before {
+  content: " ";
+  position: absolute;
+  border: 8px solid #333333;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  transform: translateX(-50%);
+  // background-color: red;
+  top: 95%;
+  left: 50%;
+}
+.image-hover:hover {
+  opacity: 1;
+  transform: scale(0.95);
+  padding: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.image-hover {
+  transition: all 0.5s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.product-name {
+  cursor: pointer;
+  display: inline;
+  position: relative;
+  font-weight: 600;
+  color: black;
+  overflow: hidden;
+  background: linear-gradient(to right, #2f80ed 50%, black 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 300ms ease;
+  text-decoration: none; // text decorations are clipped in WebKit browsers
+  &:hover {
+    background-position: 0 100%;
+  }
+}
+.size.active {
+  border: 1px solid #000;
+}
+.product-activeImage.active {
+  border: 1px solid #000;
+}
+// .product-activeImage {
+//   border: 1px solid #000;
+// }
+progress {
+  width: 100%;
+  height: 20px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #e9ecef;
+  border-radius: 20px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #df0000;
+  border-radius: 20px;
+}
+//-------------------------------- RES --------------------------------
+@media screen and (max-width: 1279px) {
+  .slick-arrow.prev {
+    left: 105%;
+  }
+  .slick-arrow.next {
+    right: -15%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .menu-1023 {
+    width: 250px;
+  }
+  .card {
+    padding-left: 10px !important;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .policy {
+    text-align: center;
+    flex-basis: 50%;
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    margin-bottom: 20px;
+    img {
+      margin-bottom: 5px;
+    }
+  }
+  .card {
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .coupon-item {
+    margin-left: 10px;
+  }
+}

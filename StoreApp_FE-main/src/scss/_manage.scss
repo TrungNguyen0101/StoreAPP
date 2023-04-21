@@ -1,0 +1,59 @@
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin-left: 200px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid red;
+  border-color: red transparent red transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+.list-product {
+  width: 100%;
+  table {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  th,
+  td {
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  th {
+    padding: 10px;
+    font-weight: 600;
+    text-align: center;
+  }
+  td {
+    text-align: center;
+    padding: 10px;
+  }
+}
+.product_id {
+  cursor: pointer;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 70px;
+  max-width: 70px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
